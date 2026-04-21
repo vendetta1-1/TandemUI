@@ -1,4 +1,4 @@
-package com.uikit.uikit.layout
+package com.uikit.layout
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
