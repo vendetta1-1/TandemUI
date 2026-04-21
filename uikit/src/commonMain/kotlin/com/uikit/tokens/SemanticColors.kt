@@ -4,7 +4,7 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 
 @Immutable
-data class UiColors(
+data class TandemUiColors(
     val primary: Color,
     val onPrimary: Color,
     val primaryContainer: Color,
@@ -36,7 +36,7 @@ data class UiColors(
     val onDisabled: Color
 )
 
-fun lightUiColors(): UiColors = UiColors(
+fun lightUiColors(): TandemUiColors = TandemUiColors(
     primary = ColorPalette.blue600,
     onPrimary = ColorPalette.neutral0,
     primaryContainer = ColorPalette.blue50,
@@ -63,7 +63,7 @@ fun lightUiColors(): UiColors = UiColors(
     onDisabled = ColorPalette.neutral400
 )
 
-fun darkUiColors(): UiColors = UiColors(
+fun darkUiColors(): TandemUiColors = TandemUiColors(
     primary = ColorPalette.blue600,
     onPrimary = ColorPalette.neutral0,
     primaryContainer = ColorPalette.blue50,
