@@ -9,13 +9,13 @@ import com.uikit.foundation.providers.LocalUiElevation
 import com.uikit.foundation.providers.LocalUiIconSize
 import com.uikit.foundation.providers.LocalUiRadius
 import com.uikit.foundation.providers.LocalUiSpacing
-import com.uikit.tokens.TandemUiBorderWidth
-import com.uikit.tokens.TandemUiColors
-import com.uikit.tokens.TandemUiDuration
-import com.uikit.tokens.TandemUiElevation
-import com.uikit.tokens.TandemUiIconSize
-import com.uikit.tokens.TandemUiRadius
-import com.uikit.tokens.TandemUiSpacing
+import com.uikit.tokens.foundation.TandemUiBorderWidth
+import com.uikit.tokens.foundation.TandemUiColors
+import com.uikit.tokens.foundation.TandemUiDuration
+import com.uikit.tokens.foundation.TandemUiElevation
+import com.uikit.tokens.foundation.TandemUiIconSize
+import com.uikit.tokens.foundation.TandemUiRadius
+import com.uikit.tokens.foundation.TandemUiSpacing
 
 object TandemTheme {
     val colors: TandemUiColors

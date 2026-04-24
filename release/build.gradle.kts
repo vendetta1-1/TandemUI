@@ -12,6 +12,9 @@ kotlin {
         namespace = "com.uikit.release"
         compileSdk { version = release(37) }
         minSdk { version = release(29) }
+        androidResources {
+            enable = true
+        }
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_21)
         }
@@ -38,4 +41,3 @@ kotlin {
         }
     }
 }
-

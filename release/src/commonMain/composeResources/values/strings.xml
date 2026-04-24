@@ -1,0 +1,5 @@
+<resources>
+    <string name="tab_learning">Learning</string>
+    <string name="tab_tasks">Tasks</string>
+    <string name="tab_statistics">Statistics</string>
+</resources>

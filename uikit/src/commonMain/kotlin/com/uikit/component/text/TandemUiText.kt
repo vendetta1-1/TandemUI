@@ -8,6 +8,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import com.uikit.foundation.theme.TandemTheme
 
 /**
  * # TandemUiText
@@ -26,7 +27,7 @@ import androidx.compose.ui.text.style.TextOverflow
 fun TandemUiText(
     text: String,
     modifier: Modifier = Modifier,
-    color: Color = MaterialTheme.colorScheme.onPrimary,
+    color: Color = TandemTheme.colors.onPrimary,
     style: TextStyle = MaterialTheme.typography.bodyMedium,
     textAlign: TextAlign = TextAlign.Start,
     maxLines: Int = Int.MAX_VALUE,

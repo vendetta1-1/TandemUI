@@ -33,3 +33,4 @@ dependencyResolutionManagement {
 
 include(":release")
 include(":uikit")
+include(":androidApp")

@@ -1,13 +1,15 @@
 package com.uikit.foundation.providers
 
 import androidx.compose.runtime.staticCompositionLocalOf
-import com.uikit.tokens.TandemUiBorderWidth
-import com.uikit.tokens.TandemUiColors
-import com.uikit.tokens.TandemUiDuration
-import com.uikit.tokens.TandemUiElevation
-import com.uikit.tokens.TandemUiIconSize
-import com.uikit.tokens.TandemUiRadius
-import com.uikit.tokens.TandemUiSpacing
+import com.uikit.tokens.foundation.TandemUiBorderWidth
+import com.uikit.tokens.bar.bottom.TandemUiBottomBarColors
+import com.uikit.tokens.bar.bottom.TandemUiBottomBarSpacing
+import com.uikit.tokens.foundation.TandemUiColors
+import com.uikit.tokens.foundation.TandemUiDuration
+import com.uikit.tokens.foundation.TandemUiElevation
+import com.uikit.tokens.foundation.TandemUiIconSize
+import com.uikit.tokens.foundation.TandemUiRadius
+import com.uikit.tokens.foundation.TandemUiSpacing
 
 val LocalUiColors = staticCompositionLocalOf<TandemUiColors> {
     error("TandemUiColors was not initialized. Wrap your UI root in TandemTheme { ... }")
@@ -35,4 +37,12 @@ val LocalUiIconSize = staticCompositionLocalOf<TandemUiIconSize> {
 
 val LocalUiBorderWidth = staticCompositionLocalOf<TandemUiBorderWidth> {
     error("TandemUiBorderWidth was not initialized. Wrap your UI root in TandemTheme { ... }")
+}
+
+val LocalUiBottomBarColors = staticCompositionLocalOf<TandemUiBottomBarColors> {
+    error("TandemUiBottomBarColors was not initialized. Wrap your UI root in TandemTheme { ... }")
+}
+
+val LocalUiBottomBarSpacing = staticCompositionLocalOf<TandemUiBottomBarSpacing> {
+    error("TandemUiBottomBarSpacing was not initialized. Wrap your UI root in TandemTheme { ... }")
 }
