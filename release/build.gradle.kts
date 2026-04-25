@@ -10,7 +10,7 @@ plugins {
 kotlin {
     android {
         namespace = "com.uikit.release"
-        compileSdk { version = release(37) }
+        compileSdk { version = release(36) }
         minSdk { version = release(29) }
         androidResources {
             enable = true

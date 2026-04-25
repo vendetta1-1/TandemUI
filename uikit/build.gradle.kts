@@ -10,7 +10,7 @@ plugins {
 kotlin {
     android {
         namespace = "com.tandem.uikit"
-        compileSdk { version = release(37) }
+        compileSdk { version = release(36) }
         minSdk { version = release(29) }
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_21)

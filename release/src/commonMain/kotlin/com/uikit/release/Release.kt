@@ -1,6 +1,7 @@
 package com.uikit.release
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.statusBarsPadding
@@ -22,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import com.uikit.component.bar.bottom.TandemUiBottomBar
 import com.uikit.component.bar.bottom.TandemUiBottomBarDefaults
 import com.uikit.component.bar.bottom.TandemUiBottomBarItem
+import com.uikit.component.progress.circular.TandemUiCircularProgressBar
 import com.uikit.component.text.TandemUiText
 import tandemui.release.generated.resources.Res
 import tandemui.release.generated.resources.assignment
@@ -78,17 +80,33 @@ fun Release() {
                     .fillMaxSize()
             ) {
                 when (selectedRoute) {
-                    else -> LazyColumn(
-                        modifier = Modifier.fillMaxSize()
-                    ) {
-                        items(
-                            items = List(100) { selectedRoute.toString() }
+                    else -> Column(modifier = Modifier.fillMaxSize()) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .statusBarsPadding(),
+                            contentAlignment = Alignment.Center
                         ) {
-                            TandemUiText(
-                                text = it,
-                                color = Color.Black,
-                                modifier = Modifier.fillMaxWidth()
+                            TandemUiCircularProgressBar(
+                                progress = 1f,
+                                diameter = 200.dp,
+                                strokeWidth = 16.dp,
+                                revealDurationMs = 7000,
+                                label = "Прогресс"
                             )
+                        }
+                        LazyColumn(
+                            modifier = Modifier.fillMaxSize()
+                        ) {
+                            items(
+                                items = List(100) { selectedRoute.toString() }
+                            ) {
+                                TandemUiText(
+                                    text = it,
+                                    color = Color.Black,
+                                    modifier = Modifier.fillMaxWidth()
+                                )
+                            }
                         }
                     }
                 }

@@ -10,6 +10,7 @@ import com.uikit.tokens.foundation.TandemUiElevation
 import com.uikit.tokens.foundation.TandemUiIconSize
 import com.uikit.tokens.foundation.TandemUiRadius
 import com.uikit.tokens.foundation.TandemUiSpacing
+import com.uikit.tokens.progress.circular.TandemUiCircularProgressBarColors
 
 /**
  *  # LocalProviders
@@ -52,4 +53,8 @@ val LocalUiBottomBarColors = staticCompositionLocalOf<TandemUiBottomBarColors> {
 
 val LocalUiBottomBarSpacing = staticCompositionLocalOf<TandemUiBottomBarSpacing> {
     error("TandemUiBottomBarSpacing was not initialized. Wrap your UI root in TandemTheme { ... }")
+}
+
+val LocalUiCircularProgressBarColors = staticCompositionLocalOf<TandemUiCircularProgressBarColors> {
+    error("TandemUiCircularProgressBarColors was not initialized. Wrap your UI root in TandemTheme { ... }")
 }

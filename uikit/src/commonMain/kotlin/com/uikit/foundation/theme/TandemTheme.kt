@@ -4,9 +4,12 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.lerp
 import com.uikit.foundation.providers.LocalUiBorderWidth
 import com.uikit.foundation.providers.LocalUiBottomBarColors
 import com.uikit.foundation.providers.LocalUiBottomBarSpacing
+import com.uikit.foundation.providers.LocalUiCircularProgressBarColors
 import com.uikit.foundation.providers.LocalUiColors
 import com.uikit.foundation.providers.LocalUiDuration
 import com.uikit.foundation.providers.LocalUiElevation
@@ -24,6 +27,7 @@ import com.uikit.tokens.foundation.TandemUiRadius
 import com.uikit.tokens.foundation.TandemUiSpacing
 import com.uikit.tokens.foundation.darkUiColors
 import com.uikit.tokens.foundation.lightUiColors
+import com.uikit.tokens.progress.circular.TandemUiCircularProgressBarColors
 
 /**
  * # TandemTheme
@@ -58,6 +62,23 @@ private fun defaultBottomBarSpacing(spacing: TandemUiSpacing): TandemUiBottomBar
         contentPadding = PaddingValues(all = spacing.xs)
     )
 
+private fun defaultCircularProgressBarColors(colors: TandemUiColors): TandemUiCircularProgressBarColors {
+    val highlight = lerp(colors.primary, Color.White, 0.45f)
+    return TandemUiCircularProgressBarColors(
+        trackColor = colors.surfaceVariant,
+        gradientColors = listOf(
+            colors.primary,
+            colors.primary,
+            highlight,
+            colors.primary,
+            colors.primary
+        ),
+        contentColor = colors.onSurface,
+        glowColor = highlight,
+        coreColor = colors.primary
+    )
+}
+
 /**
  * # TandemTheme
  *
@@ -89,6 +110,7 @@ fun TandemTheme(
     borderWidth: TandemUiBorderWidth = DefaultBorderWidth,
     bottomBarColors: TandemUiBottomBarColors = defaultBottomBarColors(colors),
     bottomBarSpacing: TandemUiBottomBarSpacing = defaultBottomBarSpacing(spacing),
+    circularProgressBarColors: TandemUiCircularProgressBarColors = defaultCircularProgressBarColors(colors),
     content: @Composable () -> Unit
 ) {
     CompositionLocalProvider(
@@ -100,7 +122,8 @@ fun TandemTheme(
         LocalUiIconSize provides iconSize,
         LocalUiBorderWidth provides borderWidth,
         LocalUiBottomBarColors provides bottomBarColors,
-        LocalUiBottomBarSpacing provides bottomBarSpacing
+        LocalUiBottomBarSpacing provides bottomBarSpacing,
+        LocalUiCircularProgressBarColors provides circularProgressBarColors
     ) {
         content()
     }
