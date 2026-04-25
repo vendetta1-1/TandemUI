@@ -22,6 +22,8 @@ import com.uikit.foundation.theme.TandemTheme
  * @param [textAlign] выравнивание текста внутри его контейнера
  * @param [maxLines] максимальное количество строк отображаемого текста на экране
  * @param [overflow] стратегия при невозможности разместить текст в доступной ширине или высоте
+ *
+ * @author Бережной Александр
  */
 @Composable
 fun TandemUiText(

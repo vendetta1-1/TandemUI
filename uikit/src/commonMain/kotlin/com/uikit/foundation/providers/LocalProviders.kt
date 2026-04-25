@@ -11,6 +11,13 @@ import com.uikit.tokens.foundation.TandemUiIconSize
 import com.uikit.tokens.foundation.TandemUiRadius
 import com.uikit.tokens.foundation.TandemUiSpacing
 
+/**
+ *  # LocalProviders
+ *
+ *  Провайдеры констант(цвета, отступы, радиусы и т.д) для темы
+ *
+ *  @author Эльвин Надиров
+ */
 val LocalUiColors = staticCompositionLocalOf<TandemUiColors> {
     error("TandemUiColors was not initialized. Wrap your UI root in TandemTheme { ... }")
 }

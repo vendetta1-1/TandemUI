@@ -7,6 +7,7 @@ import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -19,6 +20,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -53,10 +55,13 @@ import org.jetbrains.compose.resources.stringResource
  * @param [selectedRoute] активаная вкладка
  * @param [onItemClick] действие при нажатии на вкладку
  * @param [modifier] модификатор для стилизации и разметки
+ * @param [showTitles] отображать ли подписи под иконками
  * @param [spacing] отсупы для бара и контента
  * @param [colors] цвета для бара и контента
  * @param [shape] форма бара
  * @param [tonalElevation] возвышение бара над экраном
+ *
+ * @author Бережной Александр
  */
 @Composable
 fun <T> TandemUiBottomBar(
@@ -64,6 +69,8 @@ fun <T> TandemUiBottomBar(
     selectedRoute: T,
     onItemClick: (T) -> Unit,
     modifier: Modifier = Modifier,
+    showTitles: Boolean = true,
+    backgroundAlpha: Float = 0.93f,
     spacing: TandemUiBottomBarSpacing = TandemUiBottomBarDefaults.bottomBarSpacing(),
     colors: TandemUiBottomBarColors = TandemUiBottomBarDefaults.bottomBarColors(),
     shape: Shape = TandemUiBottomBarDefaults.DefaultShape,
@@ -72,17 +79,18 @@ fun <T> TandemUiBottomBar(
     BoxWithConstraints(
         modifier = modifier
             .fillMaxWidth()
+            .navigationBarsPadding()
             .padding(spacing.floatingPadding)
-            .height(70.dp) // TODO: возможно стоит изменить подход: либо вынести в параметры, либо законстантить, либо исользовать modifier.heightIn()
+            .height(80.dp) // TODO: возможно стоит изменить подход: либо вынести в параметры, либо законстантить, либо исользовать modifier.heightIn()
             .shadow(
                 elevation = tonalElevation,
                 shape = shape,
-                ambientColor = colors.selectedContainerColor.copy(alpha = 0.3f),
-                spotColor = colors.selectedContainerColor.copy(alpha = 0.3f)
+                ambientColor = colors.selectedContainerColor.copy(alpha = 0.2f),
+                spotColor = colors.selectedContainerColor.copy(alpha = 0.2f)
             )
+            .padding(spacing.contentPadding)
             .clip(shape)
-            .background(colors.unselectedContainerColor)
-            .padding(spacing.contentPadding),
+            .background(colors.unselectedContainerColor.copy(alpha = backgroundAlpha)),
         contentAlignment = Alignment.Center,
     ) {
         val itemWidth = maxWidth / items.size
@@ -91,7 +99,7 @@ fun <T> TandemUiBottomBar(
             targetValue = itemWidth * selectedIndex,
             animationSpec = spring(
                 dampingRatio = Spring.DampingRatioMediumBouncy,
-                stiffness = Spring.StiffnessMediumLow,
+                stiffness = Spring.StiffnessMediumLow
             ),
             label = "indicator-offset",
         )
@@ -101,8 +109,9 @@ fun <T> TandemUiBottomBar(
                 .offset(x = indicatorOffset)
                 .width(itemWidth)
                 .fillMaxHeight()
+                .padding(spacing.contentPadding)
                 .clip(shape)
-                .background(colors.selectedContainerColor),
+                .background(colors.selectedContainerColor.copy(alpha = backgroundAlpha)),
         )
         Row(
             modifier = Modifier
@@ -115,13 +124,15 @@ fun <T> TandemUiBottomBar(
                 Box(
                     modifier = Modifier
                         .width(itemWidth)
-                        .fillMaxHeight(),
+                        .fillMaxHeight()
+                        .clip(shape),
                     contentAlignment = Alignment.Center
                 ) {
                     TandemUiBottomBarElement(
                         item = item,
                         isSelected = selectedRoute == item.route,
                         onClick = onItemClick,
+                        showTitles = showTitles,
                         selectedContentColor = colors.selectedContentColor,
                         unselectedContentColor = colors.unselectedContentColor,
                     )
@@ -141,14 +152,18 @@ fun <T> TandemUiBottomBar(
  * @param [item] вкладка для навигации
  * @param [isSelected] является ли эта вкладка активной
  * @param [onClick] действие при нажатии на вкладку
+ * @param [showTitles] отображать ли подписи под иконками
  * @param [selectedContentColor] цвет контенка активной вкладки
  * @param [unselectedContentColor] цвет контента неактивной вкладки
+ *
+ * @author Бережной Александр
  */
 @Composable
 private fun <T> TandemUiBottomBarElement(
     item: TandemUiBottomBarItem<T>,
     isSelected: Boolean,
     onClick: (T) -> Unit,
+    showTitles: Boolean = true,
     selectedContentColor: Color = TandemUiBottomBarDefaults.DefaultSelectedContentColor,
     unselectedContentColor: Color = TandemUiBottomBarDefaults.DefaultUnselectedContentColor
 ) {
@@ -157,10 +172,6 @@ private fun <T> TandemUiBottomBarElement(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxHeight()
-            .padding(
-                vertical = TandemTheme.spacing.sm,
-                horizontal = TandemTheme.spacing.xs
-            )
             .clickable(
                 interactionSource = null,
                 indication = null,
@@ -180,11 +191,13 @@ private fun <T> TandemUiBottomBarElement(
             contentDescription = stringResource(item.titleStringResource),
             modifier = Modifier.size(TandemTheme.iconSize.sm)
         )
-        // TODO: добавить Typography в тему и устанавливать здесь либо снаружи или по факту
-        TandemUiText(
-            text = stringResource(item.titleStringResource),
-            color = color,
-            maxLines = 1
-        )
+        if (showTitles) {
+            // TODO: добавить Typography в тему и устанавливать здесь либо снаружи или по факту
+            TandemUiText(
+                text = stringResource(item.titleStringResource),
+                color = color,
+                maxLines = 1
+            )
+        }
     }
 }

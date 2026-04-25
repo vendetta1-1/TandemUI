@@ -2,6 +2,13 @@ package com.uikit.tokens.foundation
 
 import androidx.compose.ui.graphics.Color
 
+/**
+ * # ColorPalette
+ *
+ * Палитра Цветов
+ *
+ * @author Эльвин Надиров
+ */
 object ColorPalette {
     val blue50 = Color(0xFFE3F2FD)
     val blue100 = Color(0xFFBBDEFB)

@@ -1,6 +1,7 @@
 package com.uikit.component.bar.bottom
 
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
@@ -20,6 +21,8 @@ import com.uikit.tokens.foundation.TandemUiSpacing
  * # TandemUiBottomBarDefaults
  *
  * Значения по умолчанию для цветов, отступов, возвышения нижнего бара, а также функции для их переопределения
+ *
+ * @author Бережной Александр
  */
 object TandemUiBottomBarDefaults {
 
@@ -43,7 +46,7 @@ object TandemUiBottomBarDefaults {
     internal val DefaultShape: Shape
         @Composable
         @ReadOnlyComposable
-        get() = RoundedCornerShape(TandemTheme.radius.xl)
+        get() = CircleShape
 
     internal val DefaultSelectedContainerColor: Color
         @Composable

@@ -4,6 +4,13 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * # TandemUiRadius
+ *
+ * Константы радиусов закруглений
+ *
+ * @author Эльвин Надиров
+ */
 @Immutable
 data class TandemUiRadius(
     val none: Dp = 0.dp,

@@ -14,6 +14,8 @@ import androidx.compose.ui.graphics.Color
  * @param [unselectedContentColor] цвет контента неактивной вкладки
  *
  * @see com.uikit.component.bar.bottom.TandemUiBottomBar
+ *
+ * @author Бережной Александр
  */
 @Immutable
 data class TandemUiBottomBarColors(

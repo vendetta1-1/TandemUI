@@ -17,6 +17,13 @@ import com.uikit.tokens.foundation.TandemUiIconSize
 import com.uikit.tokens.foundation.TandemUiRadius
 import com.uikit.tokens.foundation.TandemUiSpacing
 
+/**
+ * # TandemTheme
+ *
+ * Тема с константными значениями
+ *
+ * @author Эльвин Надиров
+ */
 object TandemTheme {
     val colors: TandemUiColors
         @Composable

@@ -4,6 +4,13 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * # TandemUiIconSize
+ *
+ * Константы размеров иконок
+ *
+ * @author Эльвин Надиров
+ */
 @Immutable
 data class TandemUiIconSize(
     val xs: Dp = 8.dp,

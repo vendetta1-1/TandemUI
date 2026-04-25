@@ -21,6 +21,8 @@ import androidx.compose.ui.zIndex
  *
  * @param [header] всегда видим и меняет размер в зависимости от прокрутки.
  * @param [content] основная прокручиваемая область, которая становится доступной после уменьшения заголовка.
+ *
+ * @author Бережной Александр
  */
 @Composable
 fun TandemUiShrinkingHeaderLayout(

@@ -2,6 +2,13 @@ package com.uikit.tokens.foundation
 
 import androidx.compose.runtime.Immutable
 
+/**
+ * # TandemUiDuration
+ *
+ * Константы продолжительности в миллисекундах
+ *
+ * @author Эльвин Надиров
+ */
 @Immutable
 data class TandemUiDuration(
     val instant: Int = 0,

@@ -4,6 +4,13 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * # TandemUiSpacing
+ *
+ * Константы отступов
+ *
+ * @author Эльвин Надиров
+ */
 @Immutable
 data class TandemUiSpacing(
     val xxxs: Dp = 2.dp,

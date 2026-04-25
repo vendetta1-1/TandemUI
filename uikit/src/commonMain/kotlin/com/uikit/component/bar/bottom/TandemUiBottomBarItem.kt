@@ -11,6 +11,8 @@ import org.jetbrains.compose.resources.StringResource
  * @param [titleStringResource] строковый ресурс для отображения текста
  * @param [iconDrawableResource] drawable ресурс для отображения иконки вкладки
  * @param [route] route для навигации
+ *
+ * @author Бережной Александр
  */
 data class TandemUiBottomBarItem<out T>(
     val titleStringResource: StringResource,

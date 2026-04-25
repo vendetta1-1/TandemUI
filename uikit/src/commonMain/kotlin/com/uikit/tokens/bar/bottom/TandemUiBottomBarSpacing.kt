@@ -12,6 +12,8 @@ import androidx.compose.runtime.Immutable
  * @param [contentPadding] отступы от краёв бара до его контента
  *
  * @see com.uikit.component.bar.bottom.TandemUiBottomBar
+ *
+ * @author Бережной Александр
  */
 @Immutable
 data class TandemUiBottomBarSpacing(

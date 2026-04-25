@@ -25,6 +25,13 @@ import com.uikit.tokens.foundation.TandemUiSpacing
 import com.uikit.tokens.foundation.darkUiColors
 import com.uikit.tokens.foundation.lightUiColors
 
+/**
+ * # TandemTheme
+ *
+ * Обертка цветовой темы
+ *
+ * @author Эльвин Надиров
+ */
 private val DefaultLightColors = lightUiColors()
 private val DefaultDarkColors = darkUiColors()
 private val DefaultSpacing = TandemUiSpacing()
@@ -51,6 +58,25 @@ private fun defaultBottomBarSpacing(spacing: TandemUiSpacing): TandemUiBottomBar
         contentPadding = PaddingValues(all = spacing.xs)
     )
 
+/**
+ * # TandemTheme
+ *
+ * Обертка цветовой темы
+ *
+ * @param [darkTheme] темная или светлая тема на устройстве
+ * @param [colors] цвета темы
+ * @param [spacing] отступы
+ * @param [radius] радиусы закругления
+ * @param [elevation] возвышения
+ * @param [duration] продолжительности в миллисекундах
+ * @param [iconSize] размеры иконок
+ * @param [borderWidth] толщина обводок
+ * @param [bottomBarColors] цвета нижнего бара
+ * @param [bottomBarSpacing] отступы нижнего бара
+ * @param [content] контент оборачиваемый в тему
+ *
+ * @author Эльвин Надиров
+ */
 @Composable
 fun TandemTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

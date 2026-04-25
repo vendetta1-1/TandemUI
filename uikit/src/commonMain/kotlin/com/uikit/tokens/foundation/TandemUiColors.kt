@@ -3,6 +3,13 @@ package com.uikit.tokens.foundation
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 
+/**
+ * # TandemUiColors
+ *
+ * Константы цветов темы
+ *
+ * @author Эльвин Надиров
+ */
 @Immutable
 data class TandemUiColors(
     val primary: Color,
@@ -36,6 +43,13 @@ data class TandemUiColors(
     val onDisabled: Color
 )
 
+/**
+ * # lightUiColors
+ *
+ * Светлая тема
+ *
+ * @author Эльвин Надиров
+ */
 fun lightUiColors(): TandemUiColors = TandemUiColors(
     primary = ColorPalette.blue600,
     onPrimary = ColorPalette.neutral0,
@@ -63,6 +77,13 @@ fun lightUiColors(): TandemUiColors = TandemUiColors(
     onDisabled = ColorPalette.neutral400
 )
 
+/**
+ * # darkUiColors
+ *
+ * Темная тема
+ *
+ * @author Эльвин Надиров
+ */
 fun darkUiColors(): TandemUiColors = TandemUiColors(
     primary = ColorPalette.blue600,
     onPrimary = ColorPalette.neutral0,

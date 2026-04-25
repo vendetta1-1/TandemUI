@@ -4,6 +4,13 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * # TandemUiElevation
+ *
+ * Константы возвышений
+ *
+ * @author Эльвин Надиров
+ */
 @Immutable
 data class TandemUiElevation(
     val none: Dp = 0.dp,
