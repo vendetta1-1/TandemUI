@@ -1,22 +1,22 @@
 [versions]
-agp = "9.0.0"
+agp = "9.2.0"
 androidx-activity = "1.13.0"
 composeMultiplatform = "1.10.3"
 kotlin = "2.3.21"
 material3 = "1.10.0-alpha05"
 androidx-test = "1.7.0"
 junit = "1.3.0"
+constraintlayout = "0.7.0"
 
 [libraries]
+compose-constraintlayout = { module = "tech.annexflow.compose:constraintlayout-compose-multiplatform", version.ref = "constraintlayout" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "composeMultiplatform" }
 compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "composeMultiplatform" }
 compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
-compose-material3-icons = { module = "org.jetbrains.compose.material:material-icons-extended", version= "1.7.3" }
 compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
 compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
 compose-uiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatform" }
-kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
 kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
 androidx-runner = { group = "androidx.test", name = "runner", version.ref = "androidx-test" }
 androidx-core = { group = "androidx.test", name = "core", version.ref = "androidx-test" }
@@ -26,7 +26,7 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 compose = [
     "compose-components-resources", "compose-foundation",
     "compose-material3", "compose-runtime", "compose-ui",
-    "compose-uiToolingPreview",
+    "compose-uiToolingPreview", "compose-constraintlayout"
 ]
 
 [plugins]

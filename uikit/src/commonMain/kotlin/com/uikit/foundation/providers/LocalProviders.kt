@@ -10,6 +10,7 @@ import com.uikit.tokens.foundation.TandemUiElevation
 import com.uikit.tokens.foundation.TandemUiIconSize
 import com.uikit.tokens.foundation.TandemUiRadius
 import com.uikit.tokens.foundation.TandemUiSpacing
+import com.uikit.tokens.foundation.TandemUiTypography
 import com.uikit.tokens.progress.circular.TandemUiCircularProgressBarColors
 
 /**
@@ -21,6 +22,10 @@ import com.uikit.tokens.progress.circular.TandemUiCircularProgressBarColors
  */
 val LocalUiColors = staticCompositionLocalOf<TandemUiColors> {
     error("TandemUiColors was not initialized. Wrap your UI root in TandemTheme { ... }")
+}
+
+val LocalUiTypography = staticCompositionLocalOf<TandemUiTypography> {
+    error("TandemUiTypography was not initialized. Wrap your UI root in TandemTheme { ... }")
 }
 
 val LocalUiSpacing = staticCompositionLocalOf<TandemUiSpacing> {

@@ -9,6 +9,7 @@ import com.uikit.foundation.providers.LocalUiElevation
 import com.uikit.foundation.providers.LocalUiIconSize
 import com.uikit.foundation.providers.LocalUiRadius
 import com.uikit.foundation.providers.LocalUiSpacing
+import com.uikit.foundation.providers.LocalUiTypography
 import com.uikit.tokens.foundation.TandemUiBorderWidth
 import com.uikit.tokens.foundation.TandemUiColors
 import com.uikit.tokens.foundation.TandemUiDuration
@@ -16,19 +17,25 @@ import com.uikit.tokens.foundation.TandemUiElevation
 import com.uikit.tokens.foundation.TandemUiIconSize
 import com.uikit.tokens.foundation.TandemUiRadius
 import com.uikit.tokens.foundation.TandemUiSpacing
+import com.uikit.tokens.foundation.TandemUiTypography
 
 /**
  * # TandemTheme
  *
  * Тема с константными значениями
  *
- * @author Эльвин Надиров
+ * @author Надиров Эльвин
  */
 object TandemTheme {
     val colors: TandemUiColors
         @Composable
         @ReadOnlyComposable
         get() = LocalUiColors.current
+
+    val typography: TandemUiTypography
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalUiTypography.current
 
     val spacing: TandemUiSpacing
         @Composable

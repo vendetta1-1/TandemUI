@@ -30,6 +30,11 @@ object TandemUiBottomBarDefaults {
         @Composable
         @ReadOnlyComposable
         get() = TandemTheme.elevation.xxxl
+
+    val DefaultLeadingIconSize : Dp
+        @Composable
+        @ReadOnlyComposable
+        get() = TandemTheme.iconSize.xxl
     private val DefaultContentSpacing: Dp
         @Composable
         @ReadOnlyComposable

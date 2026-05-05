@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -18,7 +16,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
 import com.uikit.component.bar.bottom.TandemUiBottomBar
 import com.uikit.component.bar.bottom.TandemUiBottomBarDefaults
@@ -29,6 +26,7 @@ import tandemui.release.generated.resources.Res
 import tandemui.release.generated.resources.assignment
 import tandemui.release.generated.resources.bar_chart
 import tandemui.release.generated.resources.school
+import tandemui.release.generated.resources.tab_leading_search
 import tandemui.release.generated.resources.tab_learning
 import tandemui.release.generated.resources.tab_statistics
 import tandemui.release.generated.resources.tab_tasks
@@ -46,6 +44,8 @@ sealed class Tab {
     object Tasks : Tab()
 
     object Statistics : Tab()
+
+    object Leading : Tab()
 }
 
 @Composable
@@ -113,6 +113,11 @@ fun Release() {
             }
             TandemUiBottomBar(
                 items = items,
+                leadingItem = TandemUiBottomBarItem(
+                    titleStringResource = Res.string.tab_leading_search,
+                    iconDrawableResource = Res.drawable.bar_chart,
+                    route = Tab.Leading
+                ),
                 selectedRoute = selectedRoute,
                 onItemClick = { selectedRoute = it },
                 modifier = Modifier.align(Alignment.BottomCenter)

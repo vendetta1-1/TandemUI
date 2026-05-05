@@ -30,7 +30,7 @@ fun TandemUiText(
     text: String,
     modifier: Modifier = Modifier,
     color: Color = TandemTheme.colors.onPrimary,
-    style: TextStyle = MaterialTheme.typography.bodyMedium,
+    style: TextStyle = TandemTheme.typography.bodyMedium,
     textAlign: TextAlign = TextAlign.Start,
     maxLines: Int = Int.MAX_VALUE,
     overflow: TextOverflow = TextOverflow.Ellipsis,

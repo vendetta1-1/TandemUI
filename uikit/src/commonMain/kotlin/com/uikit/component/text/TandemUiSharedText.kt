@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import com.uikit.foundation.theme.TandemTheme
 
 /**
  * # TandemUiSharedText
@@ -44,8 +45,8 @@ fun TandemUiSharedText(
     enter: EnterTransition = EnterTransition.None,
     exit: ExitTransition = ExitTransition.None,
     resizeMode: SharedTransitionScope.ResizeMode = SharedTransitionScope.ResizeMode.scaleToBounds(),
-    color: Color = MaterialTheme.colorScheme.onPrimary,
-    style: TextStyle = MaterialTheme.typography.bodyMedium,
+    color: Color = TandemTheme.colors.onPrimary,
+    style: TextStyle = TandemTheme.typography.bodyMedium,
     textAlign: TextAlign = TextAlign.Start,
     maxLines: Int = Int.MAX_VALUE,
     overflow: TextOverflow = TextOverflow.Ellipsis,
